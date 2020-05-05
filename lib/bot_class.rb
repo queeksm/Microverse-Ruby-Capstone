@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 require 'telegram/bot'
-require_relative './messageProcessor'
-require_relative './playerClass'
-require_relative './inverterClass'
+require_relative './message_processor'
+require_relative './player_class'
+require_relative './inverter_class'
 
 class InverterBot
-
   attr_accessor :player
-  attr_accessor :Inverter
+  attr_accessor :inverter
   def initialize
     @player = Player.new
     @inverter = Inverter.new
@@ -19,21 +18,18 @@ class InverterBot
   end
 
   def command(bot, message)
-
     message_processor = MessageProcessor.new
     if message.text == '/start'
       bot.api.send_message(chat_id: message.chat.id, text: 'Welcome, i hope you have fun with this small fight')
-      bot.api.send_message(chat_id: message.chat.id, text: 'You can read all the commands on the Readme or you can type /Rules for a recap')       
+      bot.api.send_message(chat_id: message.chat.id, text: 'You can read all the commands on the Readme or you can type /Rules for a recap')
     elsif message.text == '/Rules'
-      bot.api.send_message(chat_id: message.chat.id, text: '/Attack for attacks, /Weaken to weaken the enemy, /Heal for heal, /Status for weaken removal, /Forfeit to surrender') 
+      bot.api.send_message(chat_id: message.chat.id, text: '/Attack for attacks, /Weaken to weaken the enemy, /Heal for heal, /Status for weaken removal, /Forfeit to surrender')
     elsif message.text == '/Attack' || message.text == '/Weaken' || message.text == '/Heal' || message.text == '/Status' || message.text == '/Forfeit' || message.text == '/InstaG1BN4O'
       sleep(1)
       bot.api.send_message(chat_id: message.chat.id, text: message_processor.poster(message, @player, @inverter).to_s)
       sleep(1)
       bot.api.send_message(chat_id: message.chat.id, text: message_processor.Inverter_action(@player, @inverter).to_s)
-      if player.Status == 'Weakened'
-        bot.api.send_message(chat_id: message.chat.id, text: "You're weakened be careful")
-      end
+      bot.api.send_message(chat_id: message.chat.id, text: "You're weakened be careful") if player.Status == 'Weakened'
       if @player.HP <= 0
         bot.api.send_message(chat_id: message.chat.id, text: 'YOU DIED')
         sleep(0.5)

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative './playerClass'
+require_relative './player_class'
 
 class Inverter
   def initialize
