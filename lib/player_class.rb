@@ -13,7 +13,7 @@ class Player
 
   def attack(inverter)
     roll = rand(6).floor
-    bonus = rand(10).floor if inverter.status == "Weakened"
+    bonus = rand(10).floor if inverter.status == 'Weakened'
     case roll
     when 5
       damage = 30 + rand(18).floor + bonus
@@ -22,17 +22,18 @@ class Player
     end
 
     inverter.hp -= damage
-    return damage
+    damage
   end
 
   def heal
-    return heal = 0 if @hp == 150    
+    return heal = 0 if @hp == 150
+
     case rand(6).floor
     when 5
       heal = 10 + rand(6).floor
     else
       heal = 5 + rand(3).floor
-    end    
+    end
     @hp += heal
     @hp = 150 if @hp > 150
     @mp -= 10
@@ -44,14 +45,14 @@ class Player
   end
 
   def clear
-   @status = 'Normal'
+    @status = 'Normal'
   end
 
   def forfeit
     @hp = 0
   end
 
-  def iNB4(inverter)
+  def inb4(inverter)
     inverter.hp = 0
   end
 end

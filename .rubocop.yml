@@ -47,3 +47,5 @@ Style/HashTransformKeys:
   Enabled: False
 Style/HashTransformValues:
   Enabled: False
+Style/ConditionalAssignment:
+  Enabled: False

@@ -20,16 +20,16 @@ class MessageProcessor
       player.clear
       "You checked your stats and healed your stat afflictions, you have #{player.hp} HP and #{player.mp} MP, the inverter has #{inverter.hp} HP and it's status is #{inverter.status}"
     when '/InstaG1BN4O'
-      player.iNB4(inverter)
+      player.inb4(inverter)
       'L33T 5UP4 H4X0R !!!!'
     else 'I dont recognize that command'
     end
   end
 
-  def inverter_action(player,inverter)
-
+  def inverter_action(player, inverter)
     damage = inverter.attack(player)
-    return "The inverter misses it's attack, the mistress of fortune smiles to you today." if damage == 0
+    return "The inverter misses it's attack, the mistress of fortune smiles to you today." if damage.zero?
+
     "The inverter hits you for #{damage}"
   end
 end
