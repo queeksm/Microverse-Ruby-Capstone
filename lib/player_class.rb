@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Player
-
   def initialize
     @hp = 150
     @mp = 80
@@ -17,45 +16,42 @@ class Player
     bonus = rand(10).floor if inverter.status == "Weakened"
     case roll
     when 5
-      damage = 30 + rand(18).floor        
+      damage = 30 + rand(18).floor + bonus
     else
-      damage = 10 + rand(6).floor
+      damage = 10 + rand(6).floor + bonus
     end
 
-    inverter.HP -= damage
+    inverter.hp -= damage
     return damage
   end
 
   def heal
-    if @HP == 150
-      heal = 0
+    return heal = 0 if @hp == 150    
+    case rand(6).floor
+    when 5
+      heal = 10 + rand(6).floor
     else
-      case rand(6).floor
-        when 5
-          heal = 10 + rand(6).floor
-        else
-          heal = 5 + rand(3).floor
-      end
-    end
-    @HP += heal
-    @HP = 150 if @HP > 150
-    @MP -= 10
-    return heal
+      heal = 5 + rand(3).floor
+    end    
+    @hp += heal
+    @hp = 150 if @hp > 150
+    @mp -= 10
+    heal
   end
 
   def weaken(inverter)
-    inverter.Status = 'Weakened'
+    inverter.status = 'Weakened'
   end
 
   def clear
-   @Status = 'Normal'
+   @status = 'Normal'
   end
 
   def forfeit
-    @HP = 0
+    @hp = 0
   end
 
   def iNB4(inverter)
-    inverter.HP = 0
+    inverter.hp = 0
   end
 end

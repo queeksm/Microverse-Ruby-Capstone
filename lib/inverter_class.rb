@@ -15,17 +15,17 @@ class Inverter
 
   def attack(player)
     roll = rand(6).floor
-    bonus = rand(6).floor if player.status == "Weakened"
+    bonus = rand(6).floor if player.status == 'Weakened'
     case roll
     when 5
-      damage = damage = 10 + rand(6).floor + bonus
-      player.Status = 'Weakened'        
+      damage = 10 + rand(6).floor + bonus
+      player.Status = 'Weakened'
     when 4
       damage = 10 + rand(6).floor + bonus
     else
       damage = 0
     end
     player.hp -= damage
-    return damage
+    damage
   end
 end
