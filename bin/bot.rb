@@ -1,3 +1,3 @@
 require_relative '../lib/BotClass.rb'
 
-InverterBot.new
+inverter_bot.new

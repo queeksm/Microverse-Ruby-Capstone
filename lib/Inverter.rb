@@ -5,13 +5,13 @@
 # rubocop: disable Metrics/MethodLength
 # rubocop: disable Metrics/PerceivedComplexity
 
-require_relative "./Player"
+require_relative './Player'
 
-class Inverter
+class Inverter #:nodoc: all
   def initialize
     @HP = 400
     @MP = 0
-    @Status = "Normal"
+    @Status = 'Normal'
   end
 
   attr_accessor :HP
@@ -19,7 +19,8 @@ class Inverter
   attr_accessor :Status
 
   def Attack(player)
-    if player.Status == "Weakened"
+
+    if player.Status == 'Weakened'
       case rand(6).floor
       when 5
         damage = 20 + rand(12).floor        
@@ -32,7 +33,7 @@ class Inverter
       case rand(6).floor
         when 5
           damage = 10 + rand(6).floor
-          player.Status = "Weakened"
+          player.Status = 'Weakened'
         when 4
           damage = 5 + rand(3).floor
         when 3
