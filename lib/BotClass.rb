@@ -5,7 +5,7 @@ require_relative './messageProcessor'
 require_relative './playerClass'
 require_relative './inverterClass'
 
-class inverter_bot
+class InverterBot
 
   attr_accessor :player
   attr_accessor :Inverter

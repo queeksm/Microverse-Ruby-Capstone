@@ -15,10 +15,10 @@ class Player
   def Attack(inverter)
     if inverter.Status == 'Weakened'
       case rand(6).floor
-      when 5
-        damage = 30 + rand(18).floor        
-      else
-        damage = 10 + rand(6).floor
+        when 5
+          damage = 30 + rand(18).floor        
+        else
+          damage = 10 + rand(6).floor
       end
     else 
       damage = 10 + rand(6).floor
@@ -32,10 +32,10 @@ class Player
       heal = 0
     else
       case rand(6).floor
-      when 5
-        heal = 10 + rand(6).floor
-      else
-        heal = 5 + rand(3).floor
+        when 5
+          heal = 10 + rand(6).floor
+        else
+          heal = 5 + rand(3).floor
       end
     end
     @HP += heal

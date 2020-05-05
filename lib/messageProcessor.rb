@@ -14,7 +14,7 @@ class MessageProcessor
         return 'You have weakened the Inverter'
       when '/Heal'
         player.Heal
-        return "You healed #{player.Heal} HP you HP now is #{player.HP}"
+        "You healed #{player.Heal} HP you HP now is #{player.HP}"
       when '/Forfeit'
         player.Forfeit
         return 'You surrendered, you curl on the floor and await for the sweet relese of death'

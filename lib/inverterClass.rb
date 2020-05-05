@@ -18,12 +18,12 @@ class Inverter
 
     if player.Status == 'Weakened'
       case rand(6).floor
-      when 5
-        damage = 20 + rand(12).floor        
-      when 4
-        damage = 10 + rand(6).floor
-      else
-        damage = 0
+        when 5
+          damage = 20 + rand(12).floor        
+        when 4
+          damage = 10 + rand(6).floor
+        else
+          damage = 0
       end
     else 
       case rand(6).floor
