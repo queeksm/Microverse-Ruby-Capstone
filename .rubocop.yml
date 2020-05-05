@@ -7,24 +7,22 @@ AllCops:
     - "Rakefile"
   DisplayCopNames: true
 
-Metrics/LineLength:
-  Disabled: true
+Metrics/LineLength:  
   Max: 1200
-Metrics/MethodLength:
-  Disabled: true
+Metrics/MethodLength:  
   Include: ["app/controllers/*"]
   Max: 200
-Metrics/AbcSize:
-  Disabled: true
+Metrics/AbcSize:  
   Include: ["app/controllers/*"]
   Max: 200
-Metrics/ClassLength:
-  Disabled: true
+Metrics/ClassLength:  
   Max: 1500
 Metrics/BlockLength:
-  Disabled: true
-  ExcludedMethods: ['describe']
   Max: 1500
+Metrics/CyclomaticComplexity:
+  Max: 1200
+Metrics/PerceivedComplexity:
+  Max: 1200
 
 Style/Documentation:
   Enabled: false
@@ -38,6 +36,16 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
-Layout/LineLength:
-  Disabled: true
+Layout/LineLength:  
   Max: 1500
+
+  Lint/RaiseException:
+    Enabled: False
+  Lint/StructNewOverride:
+    Enabled: False
+  Style/HashEachMethods:
+    Enabled: False
+  Style/HashTransformKeys:
+    Enabled: False
+  Style/HashTransformValues:
+    Enabled: False
