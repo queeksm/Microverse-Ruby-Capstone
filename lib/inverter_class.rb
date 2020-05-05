@@ -10,32 +10,20 @@ class Inverter
   end
 
   attr_accessor :hp
-  attr_accessor :hp
+  attr_accessor :mp
   attr_accessor :status
 
   def attack(player)
     roll = rand(6).floor
-    if player.Status == 'Weakened'
-      case roll
-          when 5
-            damage = 20 + rand(12).floor        
-          when 4
-            damage = 10 + rand(6).floor
-          else
-            damage = 0
-      end
-    else 
-      case rand(6).floor
-          when 5
-            damage = 10 + rand(6).floor
-            player.Status = 'Weakened'
-          when 4
-            damage = 5 + rand(3).floor
-          when 3
-            damage = 3 + rand(2).floor
-          else
-            damage = 0
-      end
+    bonus = rand(6).floor if player.status == "Weakened"
+    case roll
+    when 5
+      damage = damage = 10 + rand(6).floor + bonus
+      player.Status = 'Weakened'        
+    when 4
+      damage = 10 + rand(6).floor + bonus
+    else
+      damage = 0
     end
     player.hp -= damage
     return damage

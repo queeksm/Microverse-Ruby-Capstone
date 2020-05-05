@@ -3,26 +3,25 @@
 class Player
 
   def initialize
-    @HP = 150
-    @MP = 80
-    @Status = 'Weakened'
+    @hp = 150
+    @mp = 80
+    @status = 'Weakened'
   end
 
-  attr_accessor :HP
-  attr_accessor :MP
-  attr_accessor :Status
+  attr_accessor :hp
+  attr_accessor :mp
+  attr_accessor :status
 
   def attack(inverter)
-    if inverter.Status == 'Weakened'
-      case rand(6).floor
-        when 5
-          damage = 30 + rand(18).floor        
-        else
-          damage = 10 + rand(6).floor
-      end
-    else 
+    roll = rand(6).floor
+    bonus = rand(10).floor if inverter.status == "Weakened"
+    case roll
+    when 5
+      damage = 30 + rand(18).floor        
+    else
       damage = 10 + rand(6).floor
     end
+
     inverter.HP -= damage
     return damage
   end
@@ -39,9 +38,7 @@ class Player
       end
     end
     @HP += heal
-    if @HP > 150
-      @HP = 150
-    end
+    @HP = 150 if @HP > 150
     @MP -= 10
     return heal
   end
