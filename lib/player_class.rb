@@ -4,7 +4,7 @@ class Player
   def initialize
     @hp = 150
     @mp = 80
-    @status = 'Weakened'
+    @status = 'Normal'
   end
 
   attr_accessor :hp
@@ -13,6 +13,7 @@ class Player
 
   def attack(inverter)
     roll = rand(6).floor
+    bonus = 0
     bonus = rand(10).floor if inverter.status == 'Weakened'
     case roll
     when 5

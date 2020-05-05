@@ -28,15 +28,15 @@ class InverterBot
       sleep(1)
       bot.api.send_message(chat_id: message.chat.id, text: message_processor.poster(message, @player, @inverter).to_s)
       sleep(1)
-      bot.api.send_message(chat_id: message.chat.id, text: message_processor.Inverter_action(@player, @inverter).to_s)
-      bot.api.send_message(chat_id: message.chat.id, text: "You're weakened be careful") if player.Status == 'Weakened'
-      if @player.HP <= 0
+      bot.api.send_message(chat_id: message.chat.id, text: message_processor.inverter_action(@player, @inverter).to_s)
+      bot.api.send_message(chat_id: message.chat.id, text: "You're weakened be careful") if player.status == 'Weakened'
+      if @player.hp <= 0
         bot.api.send_message(chat_id: message.chat.id, text: 'YOU DIED')
         sleep(0.5)
         bot.api.send_message(chat_id: message.chat.id, text: "I'll now reset the encounter.")
         @player = Player.new
         @inverter = Inverter.new
-      elsif @inverter.HP <= 0 && @player.HP.positive?
+      elsif @inverter.hp <= 0 && @player.hp.positive?
         bot.api.send_message(chat_id: message.chat.id, text: 'YOU WON')
         sleep(0.5)
         bot.api.send_message(chat_id: message.chat.id, text: 'The bards will sang about this encounter for the ages to come.')

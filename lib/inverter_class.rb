@@ -15,6 +15,7 @@ class Inverter
 
   def attack(player)
     roll = rand(6).floor
+    bonus = 0
     bonus = rand(6).floor if player.status == 'Weakened'
     case roll
     when 5
