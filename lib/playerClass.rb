@@ -12,7 +12,7 @@ class Player
   attr_accessor :MP
   attr_accessor :Status
 
-  def Attack(inverter)
+  def attack(inverter)
     if inverter.Status == 'Weakened'
       case rand(6).floor
         when 5
@@ -27,7 +27,7 @@ class Player
     return damage
   end
 
-  def Heal
+  def heal
     if @HP == 150
       heal = 0
     else
@@ -46,19 +46,19 @@ class Player
     return heal
   end
 
-  def Weaken(inverter)
+  def weaken(inverter)
     inverter.Status = 'Weakened'
   end
 
-  def Clear
+  def clear
    @Status = 'Normal'
   end
 
-  def Forfeit
+  def forfeit
     @HP = 0
   end
 
-  def INB4(inverter)
+  def iNB4(inverter)
     inverter.HP = 0
   end
 end

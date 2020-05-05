@@ -3,7 +3,6 @@
 require_relative './playerClass'
 
 class Inverter
-
   def initialize
     @HP = 400
     @MP = 0
@@ -14,7 +13,7 @@ class Inverter
   attr_accessor :MP
   attr_accessor :Status
 
-  def Attack(player)
+  def attack(player)
 
     if player.Status == 'Weakened'
       case rand(6).floor

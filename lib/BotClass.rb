@@ -28,9 +28,9 @@ class InverterBot
       bot.api.send_message(chat_id: message.chat.id, text: '/Attack for attacks, /Weaken to weaken the enemy, /Heal for heal, /Status for weaken removal, /Forfeit to surrender') 
     elsif message.text == '/Attack' || message.text == '/Weaken' || message.text == '/Heal' || message.text == '/Status' || message.text == '/Forfeit' || message.text == '/InstaG1BN4O'
       sleep(1)
-      bot.api.send_message(chat_id: message.chat.id, text: "#{message_processor.poster(message, @player, @inverter)}")
+      bot.api.send_message(chat_id: message.chat.id, text: message_processor.poster(message, @player, @inverter).to_s)
       sleep(1)
-      bot.api.send_message(chat_id: message.chat.id, text: "#{message_processor.Inverter_action(@player, @inverter)}")
+      bot.api.send_message(chat_id: message.chat.id, text: message_processor.Inverter_action(@player, @inverter).to_s)
       if player.Status == 'Weakened'
         bot.api.send_message(chat_id: message.chat.id, text: "You're weakened be careful")
       end
