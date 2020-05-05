@@ -22,16 +22,24 @@ It also requires ypou to have a telegram account.
 ## 🔨 Installation and execution.
 
   -Clone the folder using the following line on you terminal: git clone https://github.com/queeksm/Microverse-Ruby-Capstone.git
+  
   -Install the gems with the following commands: $ gem install telegram-bot-ruby
+  
   -Execute the bot that's within the bin folder: ruby bot.rb
+  
   -Talk to t.me/inv3rt3r_bot on Telegram and /start.
 
 Commands:
   -/Attack to attack the enemy
+  
   -/Weaken to weaken the enemy
+  
   -/Heal to heal yourself (Heal consumes 10 MP, so you can only heal 8 times)
+  
   -/Status to remove the weakened status and check both your and your enemy HP and MP
+  
   -/Forfeit to surrender.
+  
   -/InstaG1BN4O instantly kills the inverter (Test purposes only)
 
 Once you or the Inverter dies, the bot resets both your and the Inverter health and MP
