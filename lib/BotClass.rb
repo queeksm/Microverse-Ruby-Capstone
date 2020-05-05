@@ -1,10 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop: disable Metrics/AbcSize
-# rubocop: disable Metrics/CyclomaticComplexity
-# rubocop: disable Metrics/MethodLength
-# rubocop: disable Metrics/PerceivedComplexity
-
 require 'telegram/bot'
 require_relative './message_processor'
 require_relative './Player'
@@ -58,8 +53,3 @@ class inverter_bot #:nodoc: all
     end
   end
 end
-
-# rubocop: enable Metrics/AbcSize
-# rubocop: enable Metrics/CyclomaticComplexity
-# rubocop: enable Metrics/MethodLength
-# rubocop: enable Metrics/PerceivedComplexity
