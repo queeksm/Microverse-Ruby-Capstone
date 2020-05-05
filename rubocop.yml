@@ -1,0 +1,43 @@
+AllCops:
+  Exclude:
+    - "bin/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "Guardfile"
+    - "Rakefile"
+  DisplayCopNames: true
+
+Metrics/LineLength:
+  Disabled: true
+  Max: 1200
+Metrics/MethodLength:
+  Disabled: true
+  Include: ["app/controllers/*"]
+  Max: 200
+Metrics/AbcSize:
+  Disabled: true
+  Include: ["app/controllers/*"]
+  Max: 200
+Metrics/ClassLength:
+  Disabled: true
+  Max: 1500
+Metrics/BlockLength:
+  Disabled: true
+  ExcludedMethods: ['describe']
+  Max: 1500
+
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/AlignHash:
+  EnforcedColonStyle: key
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+Layout/LineLength:
+  Disabled: true
+  Max: 1500
