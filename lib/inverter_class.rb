@@ -4,40 +4,40 @@ require_relative './player_class'
 
 class Inverter
   def initialize
-    @HP = 400
-    @MP = 0
-    @Status = 'Normal'
+    @hp = 400
+    @mp = 0
+    @status = 'Normal'
   end
 
-  attr_accessor :HP
-  attr_accessor :MP
-  attr_accessor :Status
+  attr_accessor :hp
+  attr_accessor :hp
+  attr_accessor :status
 
   def attack(player)
-
+    roll = rand(6).floor
     if player.Status == 'Weakened'
-      case rand(6).floor
-        when 5
-          damage = 20 + rand(12).floor        
-        when 4
-          damage = 10 + rand(6).floor
-        else
-          damage = 0
+      case roll
+          when 5
+            damage = 20 + rand(12).floor        
+          when 4
+            damage = 10 + rand(6).floor
+          else
+            damage = 0
       end
     else 
       case rand(6).floor
-        when 5
-          damage = 10 + rand(6).floor
-          player.Status = 'Weakened'
-        when 4
-          damage = 5 + rand(3).floor
-        when 3
-          damage = 3 + rand(2).floor
-        else
-          damage = 0
+          when 5
+            damage = 10 + rand(6).floor
+            player.Status = 'Weakened'
+          when 4
+            damage = 5 + rand(3).floor
+          when 3
+            damage = 3 + rand(2).floor
+          else
+            damage = 0
       end
     end
-    player.HP -= damage
+    player.hp -= damage
     return damage
   end
 end

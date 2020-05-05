@@ -14,13 +14,13 @@ class MessageProcessor
         return 'You have weakened the Inverter'
       when '/Heal'
         player.heal
-        "You healed #{player.heal} HP you HP now is #{player.HP}"
+        "You healed #{player.heal} HP you HP now is #{player.hp}"
       when '/Forfeit'
         player.forfeit
         return 'You surrendered, you curl on the floor and await for the sweet relese of death'
       when '/Status'
         player.clear
-        return "You checked your stats and healed your stat afflictions, you have #{player.HP} HP and #{player.MP} MP, the inverter has #{inverter.HP} HP and it's status is #{inverter.Status}"
+        return "You checked your stats and healed your stat afflictions, you have #{player.hp} HP and #{player.mp} MP, the inverter has #{inverter.hp} HP and it's status is #{inverter.status}"
       when '/InstaG1BN4O'
         player.iNB4(inverter)
         return 'L33T 5UP4 H4X0R !!!!'
