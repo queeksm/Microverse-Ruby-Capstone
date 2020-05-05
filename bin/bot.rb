@@ -1,3 +1,3 @@
-require_relative '../lib/Bot_class.rb'
+require_relative '../lib/BotClass.rb'
 
 InverterBot.new
