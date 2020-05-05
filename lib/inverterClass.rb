@@ -1,13 +1,9 @@
 # frozen_string_literal: true
 
-# rubocop: disable Metrics/AbcSize
-# rubocop: disable Metrics/CyclomaticComplexity
-# rubocop: disable Metrics/MethodLength
-# rubocop: disable Metrics/PerceivedComplexity
+require_relative './playerClass'
 
-require_relative './Player'
+class Inverter
 
-class Inverter #:nodoc: all
   def initialize
     @HP = 400
     @MP = 0
@@ -46,8 +42,3 @@ class Inverter #:nodoc: all
     return damage
   end
 end
-
-# rubocop: enable Metrics/AbcSize
-# rubocop: enable Metrics/CyclomaticComplexity
-# rubocop: enable Metrics/MethodLength
-# rubocop: enable Metrics/PerceivedComplexity

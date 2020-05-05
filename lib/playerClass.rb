@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-# rubocop: disable Metrics/AbcSize
-# rubocop: disable Metrics/CyclomaticComplexity
-# rubocop: disable Metrics/MethodLength
-# rubocop: disable Metrics/PerceivedComplexity
+class Player
 
-class Player #:nodoc: all
   def initialize
     @HP = 150
     @MP = 80
@@ -66,8 +62,3 @@ class Player #:nodoc: all
     inverter.HP = 0
   end
 end
-
-# rubocop: enable Metrics/AbcSize
-# rubocop: enable Metrics/CyclomaticComplexity
-# rubocop: enable Metrics/MethodLength
-# rubocop: enable Metrics/PerceivedComplexity

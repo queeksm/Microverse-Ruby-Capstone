@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require 'telegram/bot'
-require_relative './message_processor'
-require_relative './Player'
-require_relative './Inverter'
+require_relative './messageProcessor'
+require_relative './playerClass'
+require_relative './inverterClass'
 
-class inverter_bot #:nodoc: all
+class inverter_bot
+
   attr_accessor :player
   attr_accessor :Inverter
   def initialize

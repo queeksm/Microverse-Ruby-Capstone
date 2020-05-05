@@ -1,13 +1,8 @@
 # frozen_string_literal: true
 
-# rubocop: disable Metrics/AbcSize
-# rubocop: disable Metrics/CyclomaticComplexity
-# rubocop: disable Metrics/MethodLength
-# rubocop: disable Metrics/PerceivedComplexity
+require_relative './playerClass'
 
-require_relative './Player'
-
-class MessageProcessor #:nodoc: all
+class MessageProcessor
 
   def poster(message,player,inverter)
 
@@ -43,8 +38,3 @@ class MessageProcessor #:nodoc: all
     end
   end
 end
-
-# rubocop: enable Metrics/AbcSize
-# rubocop: enable Metrics/CyclomaticComplexity
-# rubocop: enable Metrics/MethodLength
-# rubocop: enable Metrics/PerceivedComplexity
