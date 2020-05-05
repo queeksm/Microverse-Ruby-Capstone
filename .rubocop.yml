@@ -7,8 +7,6 @@ AllCops:
     - "Rakefile"
   DisplayCopNames: true
 
-Metrics/LineLength:  
-  Max: 1200
 Metrics/MethodLength:  
   Include: ["app/controllers/*"]
   Max: 200
@@ -39,13 +37,13 @@ Layout/MultilineMethodCallIndentation:
 Layout/LineLength:  
   Max: 1500
 
-  Lint/RaiseException:
-    Enabled: False
-  Lint/StructNewOverride:
-    Enabled: False
-  Style/HashEachMethods:
-    Enabled: False
-  Style/HashTransformKeys:
-    Enabled: False
-  Style/HashTransformValues:
-    Enabled: False
+Lint/RaiseException:
+  Enabled: False
+Lint/StructNewOverride:
+  Enabled: False
+Style/HashEachMethods:
+  Enabled: False
+Style/HashTransformKeys:
+  Enabled: False
+Style/HashTransformValues:
+  Enabled: False
