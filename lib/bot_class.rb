@@ -18,7 +18,7 @@ class InverterBot
   def command(bot, message)
     message_processor = MessageProcessor.new
     start_rules(bot, message, message_processor)
-    checker(bot, message,@player.hp, @inverter.hp)
+    checker(bot, message, @player.hp, @inverter.hp)
   end
 
   def start_rules(bot, message, message_processor)
@@ -42,7 +42,7 @@ class InverterBot
     bot.api.send_message(chat_id: message.chat.id, text: message_processor.inverter_action(@player, @inverter).to_s)
   end
 
-  def checker(bot,message, player_hp, inverter_hp)
+  def checker(bot, message, player_hp, inverter_hp)
     if player_hp <= 0
       bot.api.send_message(chat_id: message.chat.id, text: 'YOU DIED')
       sleep(0.5)

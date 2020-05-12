@@ -4,7 +4,6 @@ require_relative '../lib/player_class'
 require_relative '../lib/inverter_class'
 
 RSpec.describe Player do
-
   player = Player.new
   inverter = Inverter.new
 
@@ -32,7 +31,7 @@ RSpec.describe Player do
     end
 
     it 'Will heal for 0 HP if the player HP is 150, however it will consume a potion' do
-      player.healer(150)      
+      player.healer(150)
       expect(player.heal).to be == 0
       expect(player.hp).to be == 150
       expect(player.potions).to be == 6
@@ -68,7 +67,7 @@ RSpec.describe Inverter do
   player = Player.new
   inverter = Inverter.new
 
-  describe "#attack" do
+  describe '#attack' do
     it 'Attacks the player dealing a random ammount of damage' do
       expect(inverter.attack(player)).to be <= 20
       expect(inverter.attack(player)).to be >= 0
