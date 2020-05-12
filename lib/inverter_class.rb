@@ -13,10 +13,10 @@ class Inverter
 
   def attack(player)
     if player.status == 'Curling'
-      damage = 9999 
-      player.damager(damage) 
+      damage = 9999
+      player.damager(damage)
       return damage
-    end    
+    end
     roll = rand(6).floor
     bonus = 0
     bonus = rand(6).floor if player.status == 'Weakened'
@@ -28,7 +28,7 @@ class Inverter
       damage = 10 + rand(6).floor + bonus
     else
       damage = 0
-    end    
+    end
     player.damager(damage)
     damage
   end
@@ -41,4 +41,3 @@ class Inverter
     @hp -= num
   end
 end
-

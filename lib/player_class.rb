@@ -36,7 +36,7 @@ class Player
     else
       heal = 5 + rand(3).floor
     end
-    @hp += heal    
+    @hp += heal
     heal
   end
 
@@ -57,7 +57,7 @@ class Player
   end
 
   def wknd
-    @status = "Weakened"
+    @status = 'Weakened'
   end
 
   def damager(num)
