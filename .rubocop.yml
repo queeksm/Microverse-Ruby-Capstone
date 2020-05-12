@@ -37,6 +37,8 @@ Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 Layout/LineLength:  
   Max: 1500
+Layout/CommentIndentation:
+  Enable: False
 
 Lint/RaiseException:
   Enabled: False
