@@ -16,8 +16,7 @@ The project was created according to the requirements of the Capstone project.
 
 This bot requires the following gems:
   -Telegram BOT
-  -Bundle
-It also requires ypou to have a telegram account.
+It also requires you to have a telegram account.
 
 ## 🔨 Installation and execution.
 
@@ -26,27 +25,32 @@ It also requires ypou to have a telegram account.
   -Install the gems with the following commands: $ gem install telegram-bot-ruby
   
   -Execute the bot that's within the bin folder: ruby bot.rb
+
+  -You can also initialize the bot within the root folder of the bot by using the following command: ruby bin/bot.rb
   
-  -Talk to t.me/inv3rt3r_bot on Telegram and /start.
+  -Talk to t.me/inv3rt3r_bot on Telegram and type /start on the chat box.
+
+Bot functionality:
+
+  This bot simulates a small RPG battle using the Telegram API,the bot will calculate certain actions using the chat box and a list of commands that you can use during the battle, both the player and the enemy have an amount of hit points (HP), the player will also have 8 potions that can use at any point to heal itself. The player starts with 150HP and the Inverter(Enemy) starts with 400 HP.
 
 Commands:
-  -/Attack to attack the enemy
+  -/Attack to attack the enemy and deal a base amount of damage.
   
-  -/Weaken to weaken the enemy
+  -/Weaken to weaken the enemy this will activate the possibility of dealing critical hits upon the enemy.
   
-  -/Heal to heal yourself (Heal consumes 10 MP, so you can only heal 8 times)
+  -/Heal to heal yourself (Heal consumes 1 potion, so you can only heal 8 times).
   
-  -/Status to remove the weakened status and check both your and your enemy HP and MP
+  -/Status to remove the weakened status and check both your and your enemy HP and potions, the weakened status allows the enemy to hit you critically and deal double damage.
   
   -/Forfeit to surrender.
   
   -/InstaG1BN4O instantly kills the inverter (Test purposes only)
 
-Once you or the Inverter dies, the bot resets both your and the Inverter health and MP
-
 ## 🔨 Technologies & Languages Used
 
 - Ruby
+- Rspec
 - Telegram API
 - Rubocop
 - Stickler-CI

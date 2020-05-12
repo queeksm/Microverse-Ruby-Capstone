@@ -3,13 +3,13 @@
 class Player
   def initialize
     @hp = 150
-    @mp = 80
+    @potions = 8
     @status = 'Normal'
   end
 
-  attr_accessor :hp
-  attr_accessor :mp
-  attr_accessor :status
+  attr_reader :hp
+  attr_reader :potions
+  attr_reader :status
 
   def attack(inverter)
     roll = rand(6).floor
@@ -21,12 +21,13 @@ class Player
     else
       damage = 10 + rand(6).floor + bonus
     end
-
-    inverter.hp -= damage
+    inverter.damager(damage)
     damage
   end
 
   def heal
+    @hp = 150 if @hp > 150
+    @potions -= 1
     return heal = 0 if @hp == 150
 
     case rand(6).floor
@@ -35,14 +36,12 @@ class Player
     else
       heal = 5 + rand(3).floor
     end
-    @hp += heal
-    @hp = 150 if @hp > 150
-    @mp -= 10
+    @hp += heal    
     heal
   end
 
   def weaken(inverter)
-    inverter.status = 'Weakened'
+    inverter.wknd
   end
 
   def clear
@@ -50,10 +49,22 @@ class Player
   end
 
   def forfeit
-    @hp = 0
+    @status = 'Curling'
   end
 
   def inb4(inverter)
     inverter.hp = 0
+  end
+
+  def wknd
+    @status = "Weakened"
+  end
+
+  def damager(num)
+    @hp -= num
+  end
+
+  def healer(num)
+    @hp += num
   end
 end
