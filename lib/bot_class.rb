@@ -15,15 +15,11 @@ class InverterBot
     end
   end
 
-  private 
-
   def command(bot, message, rules)
     message_processor = MessageProcessor.new
     start_rules(bot, message, message_processor, rules)
     checker(bot,message,@player.hp, @inverter.hp)
   end
-
-  private
 
   def start_rules(bot, message,message_processor, rules)
     if message.text == '/start'
@@ -32,23 +28,19 @@ class InverterBot
     elsif message.text == '/Rules'
       bot.api.send_message(chat_id: message.chat.id, text: message_processor.poster(message, @player, @inverter).to_s)    
     elsif message.text == '/Attack' || message.text == '/Weaken' || message.text == '/Heal' || message.text == '/Status' || message.text == '/Forfeit' || message.text == '/InstaG1BN4O'
-      combat(bot,message,message_processor)
+      combat(bot, message, message_processor)
     else
       bot.api.send_message(chat_id: message.chat.id, text: "Sorry I don't recognize that command")
     end
   end
 
-  private
-
-  def combat(bot, message,message_processor)    
+  def combat(bot, message, message_processor)    
     sleep(1)
     bot.api.send_message(chat_id: message.chat.id, text: "You're weakened be careful") if @player.status == 'Weakened'
     bot.api.send_message(chat_id: message.chat.id, text: message_processor.poster(message, @player, @inverter).to_s)
     sleep(1)
     bot.api.send_message(chat_id: message.chat.id, text: message_processor.inverter_action(@player, @inverter).to_s)
   end
-
-  private
 
   def checker(bot,message,player_hp,inverter_hp)
     if player_hp <= 0
