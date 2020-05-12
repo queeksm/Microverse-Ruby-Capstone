@@ -6,7 +6,7 @@ class MessageProcessor
   def poster(message, player, inverter)
     rules = "You're nothing more than a farmer, during one of your not so exciting foraging runs you hear a scream on the depths of the forest." \
             'Against everything that your parents have taught you through the years, you run at the sound to find a grim scene.' \
-            'An adventurer lies next to a fallen tree bloodied and heavily injured, a couple of meters away you can distinguish a figure.' \ 
+            'An adventurer lies next to a fallen tree bloodied and heavily injured, a couple of meters away you can distinguish a figure.' \
             'A towering giant, armed with a brutish looking weapon that you cannot fully identify. The injured adventurer gives you his sword and 8 potions' \
             'and commends you with the monumental task of taking down the giant. His voice is clear and you listen to it with all your attention.' \
             'Use the sword to attack the giant using the /Attack command on the chat box, be careful his attacks can weaken you, and when weakened ' \
